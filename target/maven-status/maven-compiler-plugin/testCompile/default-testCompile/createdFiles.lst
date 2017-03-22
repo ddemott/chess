@@ -1,0 +1,8 @@
+com\redsky\project\pieces\QueenTests.class
+com\redsky\project\pieces\KingTests.class
+com\redsky\project\pieces\PawnTests.class
+com\redsky\project\pieces\RookTests.class
+com\redsky\project\pieces\KnightTest.class
+com\redsky\project\board\BoardTests.class
+com\redsky\project\pieces\BishopTests.class
+com\redsky\project\ChessApplicationTests.class

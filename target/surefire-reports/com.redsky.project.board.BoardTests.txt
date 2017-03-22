@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.redsky.project.board.BoardTests
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.redsky.project.board.BoardTests
