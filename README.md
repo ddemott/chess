@@ -7,7 +7,8 @@ Chess Build Instructions
    b. GIT (command line)
    c. Java (The latest version)
 2) Make a directory for the source code
-3) Go into that directory you made
+3) Execute your GIT shell
+4) CD into the directory you made using git shell
 4) Type 'git clone https://github.com/ddemott/chess' without the single quotes.  This should pull the code down
 5) Type 'mvn clean install'
 6) Type 'cd target'
