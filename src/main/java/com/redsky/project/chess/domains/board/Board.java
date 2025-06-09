@@ -176,9 +176,8 @@ public class Board {
 		y2--;
 	}
 
-	/**
-	 * All places on the board are marked by x, y coordinates an start at 1 end
-	 * at 8.
+        /**
+         * All places on the board are marked by x,y coordinates and start at 1 and end at 8.
 	 * 
 	 * @param x1
 	 *            starting x position
