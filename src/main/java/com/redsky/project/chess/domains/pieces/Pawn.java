@@ -24,16 +24,17 @@ public class Pawn extends Piece {
 		// up the board. Used as a multiplier to reverse the direction.
 		int direction = this.getColor().equals(COLOR.WHITE) ? 1 : -1;
 
-                if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
-                        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (1 * direction)));
-                        if (this.firstMoveAvailable == true) {
-                                if (board.spaceIsOccupied(this.getX(), this.getY() + (2 * direction)) == false) {
-                                        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
-                                }
-                        }
+		if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
+			possibleMoves.add(new Coordinates(this.getX(), this.getY() + (1 * direction)));
 
-                }
-		return possibleMoves;
+    if (this.firstMoveAvailable == true) {
+      if (board.spaceIsOccupied(this.getX(), this.getY() + (2 * direction)) == false) {
+        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
+      }
+    }
+	}
+
+		return possibleMoves;`
 	}
 
 	@Override
