@@ -26,11 +26,11 @@ public class Pawn extends Piece {
 
 		if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
 			possibleMoves.add(new Coordinates(this.getX(), this.getY() + (1 * direction)));
-			if (this.firstMoveAvailable == true) {
-				if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
-					possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
-				}
-			}
+                        if (this.firstMoveAvailable == true) {
+                                if (board.spaceIsOccupied(this.getX(), this.getY() + (2 * direction)) == false) {
+                                        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
+                                }
+                        }
 
 		}
 		return possibleMoves;

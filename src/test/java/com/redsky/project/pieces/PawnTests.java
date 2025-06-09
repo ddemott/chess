@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.redsky.project.chess.domains.board.Board;
 import com.redsky.project.chess.domains.pieces.Empty;
 import com.redsky.project.chess.domains.pieces.Pawn;
+import com.redsky.project.chess.constants.COLOR;
 
 public class PawnTests {
 
@@ -49,11 +50,24 @@ public class PawnTests {
 		assertEquals("Your Pawn cannot move to the locaion of 1, 5.", status);
 	}
 
-	@Test
-	public void testMovePawn_twoForwardSecondMove() {
-		board.movePiece(1, 2, 1, 4);
-		String status = board.movePiece(1, 4, 1, 6);
-		assertEquals("Your Pawn cannot move to the locaion of 1, 6.", status);
-	}
+        @Test
+        public void testMovePawn_twoForwardSecondMove() {
+                board.movePiece(1, 2, 1, 4);
+                String status = board.movePiece(1, 4, 1, 6);
+                assertEquals("Your Pawn cannot move to the locaion of 1, 6.", status);
+        }
+
+        @Test
+        public void testMovePawn_twoForwardBlockedByPiece() {
+                // place a blocking piece two squares ahead of the pawn
+                board.placePiece(0, 3, new Pawn(COLOR.WHITE));
+
+                String status = board.movePiece(1, 2, 1, 4);
+
+                // move should be illegal because destination is occupied
+                assertEquals("Your Pawn cannot move to the locaion of 1, 4.", status);
+                // ensure the pawn did not move
+                assertEquals(true, board.getPiece(1, 2) instanceof Pawn);
+        }
 
 }
