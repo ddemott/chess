@@ -57,42 +57,48 @@ public class QueenTests {
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenRight() {
+        @Test
+        public void moveQueenRight() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 8, 4);
 		Piece piece = board.getPiece(8, 4);
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenDown() {
+        @Test
+        public void moveQueenDown() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 4, 2);
 		Piece piece = board.getPiece(4, 2);
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenUpRight() {
+        @Test
+        public void moveQueenUpRight() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 6, 6);
 		Piece piece = board.getPiece(6, 6);
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenDownLeft() {
+        @Test
+        public void moveQueenDownLeft() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 2, 2);
 		Piece piece = board.getPiece(2, 2);
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenUpLeft() {
+        @Test
+        public void moveQueenUpLeft() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 2, 6);
 		Piece piece = board.getPiece(2, 6);
 		assertEquals(true, piece instanceof Queen);
 	}
 
-	public void moveQueenDownRight() {
+        @Test
+        public void moveQueenDownRight() {
 		board.movePiece(4, 1, 4, 4);
 		board.movePiece(4, 4, 6, 2);
 		Piece piece = board.getPiece(6, 2);
