@@ -61,12 +61,12 @@ public class BoardTests {
 		assertEquals(expected, actual);
 	}
 
-	@Test
-	public void testBoardBoundriesY2High() {
-		String expected = STATUS.DESTINATION_NOT_ON_BOARD;
-		String actual = board.movePiece(1, 1, 1, 0);
-		assertEquals(expected, actual);
-	}
+        @Test
+        public void testBoardBoundriesY2High() {
+                String expected = STATUS.DESTINATION_NOT_ON_BOARD;
+                String actual = board.movePiece(1, 1, 1, 9);
+                assertEquals(expected, actual);
+        }
 
 	@Test
 	public void testBoardBoundriesY2Low() {

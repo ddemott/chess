@@ -61,13 +61,12 @@ public class PawnTests {
         public void testMovePawn_twoForwardBlockedByPiece() {
                 // place a blocking piece two squares ahead of the pawn
                 board.placePiece(0, 3, new Pawn(COLOR.WHITE));
-
                 String status = board.movePiece(1, 2, 1, 4);
 
                 // move should be illegal because destination is occupied
                 assertEquals("Your Pawn cannot move to the locaion of 1, 4.", status);
-                // ensure the pawn did not move
+          
+               // ensure the pawn did not move
                 assertEquals(true, board.getPiece(1, 2) instanceof Pawn);
         }
-
 }
