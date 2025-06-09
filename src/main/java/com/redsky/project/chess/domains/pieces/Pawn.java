@@ -24,15 +24,15 @@ public class Pawn extends Piece {
 		// up the board. Used as a multiplier to reverse the direction.
 		int direction = this.getColor().equals(COLOR.WHITE) ? 1 : -1;
 
-		if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
-			possibleMoves.add(new Coordinates(this.getX(), this.getY() + (1 * direction)));
-			if (this.firstMoveAvailable == true) {
-				if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
-					possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
-				}
-			}
+                if (board.spaceIsOccupied(this.getX(), this.getY() + (1 * direction)) == false) {
+                        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (1 * direction)));
+                        if (this.firstMoveAvailable == true) {
+                                if (board.spaceIsOccupied(this.getX(), this.getY() + (2 * direction)) == false) {
+                                        possibleMoves.add(new Coordinates(this.getX(), this.getY() + (2 * direction)));
+                                }
+                        }
 
-		}
+                }
 		return possibleMoves;
 	}
 
@@ -46,9 +46,8 @@ public class Pawn extends Piece {
 				int pieceX = this.getX();
 				int pieceY = this.getY();
 
-				if (Math.abs(pieceY - y) == 2) {
-					this.firstMoveAvailable = false;
-				}
+                                // After the first successful move the pawn can no longer move two squares
+                                this.firstMoveAvailable = false;
 
 				Piece[][] boardPieces = board.getBoardPieces();
 				boardPieces[x][y] = board.getBoardPieces()[pieceX][pieceY];
