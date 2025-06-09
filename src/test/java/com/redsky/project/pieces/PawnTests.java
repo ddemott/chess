@@ -49,11 +49,18 @@ public class PawnTests {
 		assertEquals("Your Pawn cannot move to the locaion of 1, 5.", status);
 	}
 
-	@Test
-	public void testMovePawn_twoForwardSecondMove() {
-		board.movePiece(1, 2, 1, 4);
-		String status = board.movePiece(1, 4, 1, 6);
-		assertEquals("Your Pawn cannot move to the locaion of 1, 6.", status);
-	}
+        @Test
+        public void testMovePawn_twoForwardSecondMove() {
+                board.movePiece(1, 2, 1, 4);
+                String status = board.movePiece(1, 4, 1, 6);
+                assertEquals("Your Pawn cannot move to the locaion of 1, 6.", status);
+        }
+
+        @Test
+        public void testMovePawn_twoForwardAfterSingleStep() {
+                board.movePiece(1, 2, 1, 3);
+                String status = board.movePiece(1, 3, 1, 5);
+                assertEquals("Your Pawn cannot move to the locaion of 1, 5.", status);
+        }
 
 }
